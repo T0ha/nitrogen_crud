@@ -1,7 +1,7 @@
 %% vim ts=2 sw=2 et ft=erlang
-{application, sample_nitrogen_plugin,
+{application, nitrogen_crud,
  [
-  {description, "A sample plugin for the Nitrogen Web Framework"},
+  {description, "CRUD plugin for the Nitrogen Web Framework"},
   {vsn, git},
   {registered, []},
   {applications, [
