@@ -161,7 +161,6 @@ event({update=Fun, Rec, Data, Field, ElementId}) -> % {{{1
 event({show, Rec}=E) -> % {{{1
     wf:replace(Rec#crud.id, Rec);
 event({Fun, Rec, Data}=E) -> % {{{1
-    io:format("Event: ~p~n", [E]),
     call(Fun, Rec, Data),
     wf:replace(Rec#crud.id, Rec);
 event(Ev) -> % {{{1

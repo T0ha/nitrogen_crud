@@ -20,12 +20,16 @@ Then run `make` in your application.
 An element rendering module should look something like this:
 
 ```erlang
--module (nitrogen_crud_example).
+-module (crud_example).
 -include_lib("nitrogen_core/include/wf.hrl").
 -include("records.hrl").
 -compile(export_all).
 
-index() ->
+main() -> #template { file="./site/templates/bare.html" }.
+
+title() -> "Welcome to Nitrogen CRUD".
+
+body() ->
      #crud{
        pagination_class=["btn", "btn-default"],
        button_class=["btn", "btn-link"],
@@ -70,7 +74,7 @@ update(Map) ->
 delete(Map) ->
     wf:info("Removing ~p", [Map]).
  
-asset_types() ->
+types() ->
     [{css, "CSS"},
      {script, "Script"},
      {image, "Image"},
